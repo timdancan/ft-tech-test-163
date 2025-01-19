@@ -1,4 +1,65 @@
+*, h1, h2, h3, h4, h5, h6, p {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
+
 html {
-	background: #fff;
+	background-color: #fff1e5;
 	color: #333;
+}
+
+.app {
+	padding: 20px;
+}
+
+.title {
+	font-family: FinancierDisplayWeb, serif;
+	font-size: 32px;
+	line-height: 32px;
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+.instruments {
+	background-color: #262a33;
+	font-family: MetricWeb, sans-serif;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 600;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+	flex-wrap: wrap;
+}
+
+.instrument {
+	list-style: none;
+	margin-right: 20px;
+	color: white;
+	display: flex;
+	.instrumentTitle {
+		margin-right: 5px;
+	}
+}
+
+.green {
+	color: #9cd321;
+}
+
+.red {
+	color: #ff767c;
+}
+
+@media only screen and (max-width: 1000px) {
+	.instruments {
+		justify-content: space-between;
+	}
+
+	.instrument {
+		margin: 10px 0;
+	}
 }

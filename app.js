@@ -1,7 +1,7 @@
 require('sucrase/register'); // subset of babel
 const express = require('express');
 const path = require('path');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3500;
 const { engine }  = require('express-handlebars');
 const jsxEngine = require('./lib/react-server');
 
@@ -19,10 +19,26 @@ app.get('/', (req, res) => {
 /*
 * START HERE FOR JSX TEMPLATING
 */
-app.get('/jsx', (req, res) => {
+app.get('/jsx', async (req, res) => {
+
+    const data = []
+
+        try {
+            const response = await fetch("https://markets-data-api-proxy.ft.com/research/webservices/securities/v1/quotes?symbols=FTSE:FSI,INX:IOM,EURUSD,GBPUSD,IB.1:IEU");
+            const json = await response.json();
+            if (json.data.items && json.data.items.length > 0) {
+                json.data.items.forEach((item) => {
+                    data.push(item)
+                })
+            }
+        } catch (e) {
+            return console.error(e);
+        }
+
+    console.log(data)
+
     const templateData = {
-      pageTitle: 'Home',
-      content: 'Hello World!'
+        content: data
     };
 
     res.render('jsx/Main.jsx', templateData);
