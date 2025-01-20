@@ -68,10 +68,6 @@ The UI component is implemented using **plain HTML, CSS, and JavaScript**.
 - Mocked API responses were used to validate:
   - API calls functionality.
   - Сorrect operation of functions.
-
-#### **Accessibility Tests**
-- Tools like **Lighthouse** were used to validate compliance with WCAG (Web Content Accessibility Guidelines).
-
 ---
 
 ### **Key Features**
@@ -94,6 +90,6 @@ The UI component is implemented using **plain HTML, CSS, and JavaScript**.
 - **Responsiveness**:
   - Implemented using CSS media queries for cross-device compatibility.
 - **Accessibility**:
-  - Semantic HTML tags and ARIA attributes ensure compliance with accessibility standards.
+  - Semantic HTML tags.
 
 
