@@ -25,6 +25,7 @@ app.get('/jsx', async (req, res) => {
 
         try {
             const response = await fetch("https://markets-data-api-proxy.ft.com/research/webservices/securities/v1/quotes?symbols=FTSE:FSI,INX:IOM,EURUSD,GBPUSD,IB.1:IEU");
+            if (!response.ok) throw new Error('Failed to fetch stock data');
             const json = await response.json();
             if (json.data.items && json.data.items.length > 0) {
                 json.data.items.forEach((item) => {
@@ -34,8 +35,6 @@ app.get('/jsx', async (req, res) => {
         } catch (e) {
             return console.error(e);
         }
-
-    console.log(data)
 
     const templateData = {
         content: data
