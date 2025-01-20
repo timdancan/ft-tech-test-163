@@ -38,7 +38,7 @@ The application fetches stock market data using the **FT Securities Quotes API**
 #### **Example Query**  
 ```text
 ?symbols=FTSE:FSI,INX:IOM
-
+```
 ## 2. Build the UI
 
 The UI component is implemented using **plain HTML, CSS, and JavaScript**.
